@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Panduan singkat belajar coding Python untuk pemula, lengkap dengan konsep dasar dan contoh kode.">
+  <title>Python untuk Pemula — Panduan Coding</title>
+  <style>
+    :root{--bg:#f6f7f2;--paper:#fff;--ink:#20251f;--muted:#697169;--green:#176b4a;--lime:#c4ef73;--line:#e4e9df;--code:#17231e;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65}a{color:inherit} .wrap{width:min(1100px,calc(100% - 40px));margin:auto}
+    header{padding:22px 0;border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.03em}.mark{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:var(--green);color:white;font-family:var(--mono);font-weight:bold}.nav a{font-size:.9rem;text-decoration:none;color:var(--muted);margin-left:22px}.nav a:hover{color:var(--green)}
+    .hero{padding:76px 0 66px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:54px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-weight:750;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}.dot{width:8px;height:8px;border-radius:50%;background:#72b951}.hero h1{font-size:clamp(2.7rem,6vw,5.3rem);line-height:.98;letter-spacing:-.075em;margin:19px 0 20px;max-width:650px}.hero h1 span{color:var(--green)}.hero p{font-size:1.08rem;color:var(--muted);max-width:530px;margin:0 0 26px}.button{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;background:var(--green);color:white;border-radius:10px;text-decoration:none;font-weight:700}.button:hover{background:#10573b}.hero-note{font-size:.84rem;color:var(--muted);margin-top:14px}
+    .code-card{background:var(--code);color:#eaf4ed;border-radius:18px;padding:20px 22px;box-shadow:0 22px 60px #183b2924;transform:rotate(1deg)}.window{display:flex;align-items:center;gap:7px;padding-bottom:17px;border-bottom:1px solid #ffffff18;color:#a5b7ac;font-size:.78rem}.window i{width:9px;height:9px;border-radius:50%;background:#ed786a}.window i:nth-child(2){background:#e6c45d}.window i:nth-child(3){background:#74bf78}.window span{margin-left:auto}.code-card pre{margin:20px 0 0;white-space:pre-wrap;font: .91rem/1.9 var(--mono)}.comment{color:#81948a}.kw{color:#d9a9ff}.fn{color:#8fd8ff}.str{color:#c4ef73}.num{color:#ffbf81}
+    section{padding:58px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.section-head h2{font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.055em;line-height:1.08;margin:8px 0 0}.section-head p{max-width:430px;color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:22px}.icon{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#edf6e6;color:var(--green);font-weight:800;font-family:var(--mono);margin-bottom:15px}.card h3{font-size:1.07rem;margin:0 0 7px;letter-spacing:-.02em}.card p{margin:0;color:var(--muted);font-size:.94rem}.card code{font-family:var(--mono);font-size:.84em;color:#14583d;background:#eff5ed;padding:2px 5px;border-radius:4px}
+    .lesson{background:#eaf0e5}.lesson-inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:center}.lesson h2{font-size:clamp(2rem,4vw,3rem);line-height:1.05;letter-spacing:-.06em;margin:12px 0}.lesson p{color:var(--muted)}.steps{display:grid;gap:12px}.step{display:flex;gap:14px;padding:15px;background:#ffffffb8;border:1px solid #dce5d5;border-radius:12px}.step b{flex:0 0 28px;height:28px;display:grid;place-items:center;border-radius:9px;background:var(--green);color:white;font-size:.8rem}.step strong{display:block;font-size:.94rem}.step span{display:block;color:var(--muted);font-size:.86rem}
+    .example{background:var(--code);border-radius:16px;padding:22px;color:#eaf4ed}.example-top{display:flex;justify-content:space-between;align-items:center;color:#a5b7ac;font-size:.82rem;margin-bottom:15px}.example pre{margin:0;overflow:auto;font: .9rem/1.8 var(--mono)}.explain{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:16px}.explain div{padding:14px;border:1px solid var(--line);border-radius:12px;background:white}.explain strong{font-size:.88rem}.explain p{font-size:.83rem;color:var(--muted);margin:5px 0 0}
+    .cta{padding:45px 0 70px}.cta-box{background:var(--green);border-radius:18px;padding:34px 38px;color:white;display:flex;justify-content:space-between;align-items:center;gap:25px}.cta h2{font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-.05em;line-height:1.1;margin:0 0 8px}.cta p{color:#d3e7da;margin:0}.cta .button{background:var(--lime);color:#173c2a;white-space:nowrap}.cta .button:hover{background:#d7f8a0}footer{padding:20px 0 30px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;display:flex;justify-content:space-between;gap:18px}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;gap:34px;padding:54px 0}.code-card{transform:none}.grid{grid-template-columns:1fr 1fr}.lesson-inner{grid-template-columns:1fr;gap:22px}.section-head{align-items:start;flex-direction:column}.explain{grid-template-columns:1fr}.cta-box{align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{width:min(100% - 28px,1100px)}.nav nav{display:none}.grid{grid-template-columns:1fr}.hero h1{font-size:3.25rem}.code-card{padding:17px}.code-card pre,.example pre{font-size:.78rem}.cta-box{padding:26px 22px}footer{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header><div class="wrap nav"><div class="brand"><span class="mark">Py</span>Belajar Python</div><nav aria-label="Navigasi utama"><a href="#dasar">Dasar Python</a><a href="#contoh">Contoh kode</a><a href="#mulai">Mulai belajar</a></nav></div></header>
+  <main>
+    <div class="wrap hero">
+      <div><div class="eyebrow"><span class="dot"></span> Panduan pemula</div><h1>Ngoding jadi lebih <span>mudah.</span></h1><p>Kenali Python, bahasa pemrograman yang sederhana untuk dibaca dan serbaguna untuk membuat banyak hal—dari otomasi sampai aplikasi.</p><a class="button" href="#dasar">Jelajahi dasar Python <span aria-hidden="true">↓</span></a><div class="hero-note">Tidak perlu pengalaman coding sebelumnya.</div></div>
+      <div class="code-card" aria-label="Contoh kode Python"><div class="window"><i></i><i></i><i></i><span>halo.py</span></div><pre><span class="comment"># Program Python pertamamu</span>
+nama = <span class="fn">input</span>(<span class="str">"Siapa namamu? "</span>)
+umur = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Umurmu berapa? "</span>))
+
+<span class="kw">if</span> umur &gt;= <span class="num">17</span>:
+    <span class="fn">print</span>(<span class="str">f"Halo, {nama}! Selamat belajar."</span>)
+<span class="kw">else</span>:
+    <span class="fn">print</span>(<span class="str">f"Hai, {nama}! Terus semangat ya."</span>)</pre></div>
+    </div>
+    <section id="dasar"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Fondasi coding</div><h2>Kenali bagian-bagian Python</h2></div><p>Program adalah serangkaian instruksi. Python membantu kita menuliskan instruksi itu dengan sintaks yang ringkas dan mudah dibaca.</p></div>
+      <div class="grid">
+        <article class="card"><div class="icon">x=</div><h3>Variabel</h3><p>Tempat menyimpan data supaya bisa dipakai lagi. Contoh: <code>nama = "Dina"</code>.</p></article>
+        <article class="card"><div class="icon">Aa</div><h3>Tipe data</h3><p>Data punya bentuk berbeda: teks (<code>str</code>), bilangan bulat (<code>int</code>), dan benar atau salah (<code>bool</code>).</p></article>
+        <article class="card"><div class="icon">()</div><h3>Fungsi</h3><p>Instruksi yang bisa digunakan kembali. <code>print()</code> menampilkan sesuatu ke layar.</p></article>
+        <article class="card"><div class="icon">if</div><h3>Kondisi</h3><p><code>if</code> dan <code>else</code> membuat program memilih tindakan berdasarkan suatu syarat.</p></article>
+        <article class="card"><div class="icon">↻</div><h3>Perulangan</h3><p><code>for</code> atau <code>while</code> mengulang instruksi, misalnya untuk memproses daftar nama.</p></article>
+        <article class="card"><div class="icon">#</div><h3>Komentar</h3><p>Teks setelah tanda <code>#</code> adalah catatan untuk manusia, dan tidak dijalankan Python.</p></article>
+      </div></div></section>
+    <section class="lesson"><div class="wrap lesson-inner"><div><div class="eyebrow">Alur kerja</div><h2>Dari ide ke program</h2><p>Mulai dari masalah kecil. Pecah menjadi langkah-langkah, tulis kodenya, lalu jalankan dan perbaiki bila ada pesan kesalahan.</p></div><div class="steps"><div class="step"><b>1</b><div><strong>Tentukan tujuan</strong><span>Contoh: menghitung total harga belanja.</span></div></div><div class="step"><b>2</b><div><strong>Tulis instruksi</strong><span>Gunakan variabel dan operasi matematika.</span></div></div><div class="step"><b>3</b><div><strong>Jalankan dan amati</strong><span>Periksa hasilnya; pesan error memberi petunjuk saat ada yang perlu diperbaiki.</span></div></div></div></div></section>
+    <section id="contoh"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Contoh sederhana</div><h2>Menghitung total belanja</h2></div><p>Contoh ini menggabungkan variabel, angka, dan fungsi untuk menampilkan hasil.</p></div><div class="example"><div class="example-top"><span>belanja.py</span><span>Python 3</span></div><pre>harga_roti = 12000
+harga_susu = 18000
+jumlah = harga_roti + harga_susu
+
+print(f"Total belanja: Rp{jumlah}")</pre></div><div class="explain"><div><strong>1. Simpan nilai</strong><p>Harga masing-masing barang dimasukkan ke variabel.</p></div><div><strong>2. Hitung</strong><p>Tanda <code>+</code> menjumlahkan kedua nilai harga.</p></div><div><strong>3. Tampilkan</strong><p><code>print()</code> menampilkan total, yaitu Rp30000.</p></div></div></div></section>
+    <section class="cta" id="mulai"><div class="wrap"><div class="cta-box"><div><h2>Belajar paling baik dengan mencoba.</h2><p>Ubah angka, ganti teks, lalu lihat apa yang terjadi saat program dijalankan.</p></div><a class="button" href="#contoh">Lihat contoh kode <span aria-hidden="true">↑</span></a></div></div></section>
+  </main>
+  <footer class="wrap"><span>Belajar Python · Panduan coding pemula</span><span>Dibuat untuk mulai belajar, satu baris demi satu baris.</span></footer>
+</body>
+</html>
